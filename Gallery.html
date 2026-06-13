@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kien's Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body style="background-image: linear-gradient(rgba(0,0,0,0.5)),url(images/background.avif);">
+    <a href="#main-content" class="skip">Skip to Main Content</a>
+    <div class="Menu-bar">
+        <div class="Avatar">
+        <img src="images/avatar.jpg" alt="Kien">
+        <p>Kien Tran</p>
+        </div>
+        <div class="section">
+        <a style="text-decoration: none; color: black;" href="index.html"><p>Home</p></a>
+        <a style="text-decoration: none; color: black;" href="About.html"><p>About</p></a>
+        <a style="text-decoration: none; color: black;" href="Gallery.html"><p>Gallery</p></a>
+        </div>
+        <div class="Follow"><a style="text-decoration: none; color: white" href="#follow-section"><p>Follow Me</p></a></div>
+    </div>
+    <div class="Concepts">
+        <h1>MY CONCEPTS</h1>
+
+        <div class="Concepts-art" id="main-content">
+        <img src="images/De ligt to united when COMPLETE.png" alt="De Ligt">
+        <img src="images/gyokeres.png" alt="Victor Gyokeres">
+        <img src="images/Faker.png" alt="T1 Faker">
+        <img src="images/ROBBER.png" alt="Hustlang Robber">
+    </div>
+    <div class="comming-soon">
+    <span>&middot</span>
+    <p>Comming Soon</p>
+    </div>
+    </div>
+    <div id="follow-section">
+        <a class="social-link" style="text-decoration: none; color: white;" href="https://www.tiktok.com/@kienlovesdrawing467"><img src="images/tiktok.png" alt="MyTikTok">
+        <p>@kienlovesdrawing467</p></a>
+        <a class="social-link" style="text-decoration: none; color: white" href="https://www.youtube.com/@tukiidz6908"><img src="images/youtube.webp" alt="MyYoutube">
+        <p>@tukiidz6908</p></a>
+        <a class="social-link" style="text-decoration: none; color: white;" href="https://www.facebook.com/trung.kien.tran.467/"><img src="images/facebook.png" alt="MyFacebook">
+        <p>@trung.kien.tran.467</p></a>
+        <a class="social-link" style="text-decoration: none; color: white;" href="https://discord.gg/C2FpdQsh"><img src="images/discord.webp" alt="MyDiscord">
+        <p>@kientran467</p></a>
+    </div>
+<div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close-lightbox");
+        const galleryImages = document.querySelectorAll(".Concepts-art img, .Avatar img");
+        galleryImages.forEach(img => {
+            img.addEventListener("click", function() {
+                lightbox.style.display = "block";
+                lightboxImg.src = this.src;
+            });
+        });
+        closeBtn.addEventListener("click", function() {
+            lightbox.style.display = "none";
+        });
+        lightbox.addEventListener("click", function(event) {
+            if (event.target !== lightboxImg) {
+                lightbox.style.display = "none";
+            }
+        });
+    </script>
+    </body>
+</html>
