@@ -26,12 +26,14 @@
     <div class="Concepts">
         <h1>MY CONCEPTS</h1>
 
-        <div class="Concepts-art" id="main-content">
-        <img src="images/De ligt to united when COMPLETE.png" alt="De Ligt">
-        <img src="images/gyokeres.png" alt="Victor Gyokeres">
-        <img src="images/Faker.png" alt="T1 Faker">
-        <img src="images/ROBBER.png" alt="Hustlang Robber">
-    </div>
+        <div id="image">Hover over an image below to display here.</div>
+
+<div class="Concepts-art" id="main-content">
+    <img src="images/De ligt to united when COMPLETE.png" alt="De Ligt" onmouseover="upDate(this)" onmouseleave="undo()">
+    <img src="images/gyokeres.png" alt="Victor Gyokeres" onmouseover="upDate(this)" onmouseleave="undo()">
+    <img src="images/Faker.png" alt="T1 Faker" onmouseover="upDate(this)" onmouseleave="undo()">
+    <img src="images/ROBBER.png" alt="Hustlang Robber" onmouseover="upDate(this)" onmouseleave="undo()">
+</div>
     <div class="comming-soon">
     <span>&middot</span>
     <p>Comming Soon</p>
@@ -70,6 +72,22 @@
                 lightbox.style.display = "none";
             }
         });
+
+        function upDate(previewPic) {
+    console.log("Hover event triggered!");
+    
+    console.log("Alt text: " + previewPic.alt);
+    console.log("Source: " + previewPic.src);
+
+    document.getElementById('image').innerHTML = previewPic.alt;
+    document.getElementById('image').style.backgroundImage = "url('" + previewPic.src + "')";
+}
+
+function undo() {
+    document.getElementById('image').style.backgroundImage = "url('')";
+
+    document.getElementById('image').innerHTML = "Hover over an image below to display here.";
+}
     </script>
     </body>
 </html>
